@@ -17,4 +17,5 @@ EditorBuildSettings:
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: fe2a3bf3baf54544abb84ad465666ba1, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 113acb0cfe83cf74abf99256daf23765, type: 2}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 77c6ef8f4f5b497418a1cc6313e55408, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bf7dda9c8de88184c998766577e466a5, type: 2}
