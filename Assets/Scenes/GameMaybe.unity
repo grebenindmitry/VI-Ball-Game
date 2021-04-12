@@ -2404,6 +2404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 1506083053330657523, guid: c064c1c245afdf14aace87c37546d408, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6551349587968002519, guid: c064c1c245afdf14aace87c37546d408, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2418,7 +2422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551349587968002519, guid: c064c1c245afdf14aace87c37546d408, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6551349587968002519, guid: c064c1c245afdf14aace87c37546d408, type: 3}
       propertyPath: m_LocalRotation.w
