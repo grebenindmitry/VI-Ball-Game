@@ -57,6 +57,14 @@ public class ARTapToPlaceObject : MonoBehaviour
         var hits = new List<ARRaycastHit>();
         arOrigin.Raycast(screenCenter, hits, TrackableType.Planes);
 
+        for (int i = 0; i< hits.Count; i++)
+        {
+            if (hits[i].distance <= 2)
+            {
+                //TODO proximity warning
+            }
+        }
+
         placementPoseValid = hits.Count > 0;
         if (placementPoseValid)
         {
