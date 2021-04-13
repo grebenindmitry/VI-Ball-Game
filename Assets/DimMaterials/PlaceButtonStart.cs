@@ -12,7 +12,7 @@ public class PlaceButtonStart : MonoBehaviour
 {
     public GameObject objectToPlace; 
     private bool isCreated = false;
-    public Vector3 positionBtn = new Vector3(100f, 150f, 150f);
+    public Vector3 positionBtn = new Vector3(0.1f, 0.2f, 0.2f);
     public Quaternion rotation = new Quaternion(0f, 0f, 0f, 0f);
 
 
