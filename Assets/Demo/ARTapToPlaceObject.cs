@@ -30,6 +30,7 @@ public class ARTapToPlaceObject : MonoBehaviour
         if (Application.platform == RuntimePlatform.Android) {
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                Screen.sleepTimeout = SleepTimeout.SystemSetting;
             }
         }
         
