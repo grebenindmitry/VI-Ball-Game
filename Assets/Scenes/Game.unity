@@ -2290,7 +2290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 6203207466005191315, guid: 5c6212053b8d33b4e97da6e63938c951, type: 3}
+  m_PlanePrefab: {fileID: 3618222484642792613, guid: 7007b430741fb0e478ff378e6ce119d0, type: 3}
   m_DetectionMode: 1
 --- !u!114 &1824127293
 MonoBehaviour:
