@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "dce85570",
         "name": "com.DefaultCompany.ARFoundationDemoTesting",
-        "processId": 3171,
+        "processId": 4886,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -60,6 +60,12 @@
             "deviceId": "dce85570",
             "name": "com.DefaultCompany.ARFoundationDemoTesting",
             "processId": 3171,
+            "exited": false
+        },
+        {
+            "deviceId": "dce85570",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 4886,
             "exited": false
         }
     ],
