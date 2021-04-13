@@ -5,6 +5,7 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARCore;
 using UnityEngine.Experimental.XR;
 using System;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARSubsystems;
 
 public class ARTapToPlaceObject : MonoBehaviour
@@ -26,6 +27,12 @@ public class ARTapToPlaceObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Application.platform == RuntimePlatform.Android) {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            }
+        }
+        
         UpdatePlacementPose();
         UpdatePlacementIndicator();
         if (placementPoseValid && Input.touchCount>0 && Input.GetTouch(0).phase == TouchPhase.Began)
