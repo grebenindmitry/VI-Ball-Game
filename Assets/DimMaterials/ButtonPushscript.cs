@@ -20,12 +20,12 @@ public class ButtonPushscript : MonoBehaviour
     {
         // Calculate distance
         distance = Vector3.Distance(button.transform.position, arCamera.transform.position);
-        
+
         // if the distance is less than one meter
         if (distance <= 1)
         {
             GetTouchPosition();
-        }
+        } 
     }
 
     // Shoots a Ray torwards based on the coordinates of the touch in the screen
@@ -36,7 +36,7 @@ public class ButtonPushscript : MonoBehaviour
         // initializes the object that is hit
         RaycastHit hitObject;
 
-        // If there is a registered hit
+        // If there is a hit
         if (Physics.Raycast(ray, out hitObject))
         {
             // Gets the PlacementObject class if it has one
@@ -54,7 +54,7 @@ public class ButtonPushscript : MonoBehaviour
 
     // Method that checks if there is touch input and calculates the porsition of the touch
     private void GetTouchPosition()
-    {
+    {      
         // if there are inputs
         if (Input.touchCount > 0)
         {
