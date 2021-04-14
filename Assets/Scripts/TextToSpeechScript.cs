@@ -50,5 +50,10 @@ namespace CO2403
         {
             if (pauseStatus) _unityTextToSpeech.Call("Stop");
         }
+        
+        private void OnApplicationFocus(bool focusStatus)
+        {
+            if (!focusStatus) _unityTextToSpeech.Call("Stop");
+        }
     }
 }
