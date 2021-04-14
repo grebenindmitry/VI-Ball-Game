@@ -14,4 +14,8 @@ public class UnityTextToSpeech {
     public void Speak(String text) {
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
+
+    public void Stop() {
+        textToSpeech.stop();
+    }
 }
