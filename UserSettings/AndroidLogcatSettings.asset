@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "11749d17",
+    "m_SelectedDeviceId": "DUM7N19430002800",
     "m_SelectedPackage": {
-        "deviceId": "11749d17",
+        "deviceId": "DUM7N19430002800",
         "name": "com.DefaultCompany.ARFoundationDemoTesting",
-        "processId": 27114,
+        "processId": 12256,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -36,6 +36,18 @@
             "deviceId": "11749d17",
             "name": "com.DefaultCompany.ARFoundationDemoTesting",
             "processId": 27114,
+            "exited": false
+        },
+        {
+            "deviceId": "DUM7N19430002800",
+            "name": "com.huawei.android.launcher",
+            "processId": 2562,
+            "exited": false
+        },
+        {
+            "deviceId": "DUM7N19430002800",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 12256,
             "exited": false
         }
     ],
