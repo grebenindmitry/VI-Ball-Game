@@ -8,7 +8,7 @@ public class DistanceButton : MonoBehaviour
     public Transform ballPos;
     private float distance;
     public GameObject ball;
-    public 
+    
     
 
     // Start is called before the first frame update
