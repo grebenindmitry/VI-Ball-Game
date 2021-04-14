@@ -46,10 +46,10 @@ namespace CO2403
         {
             _unityTextToSpeech.Call("Stop");
         }
-        
-        private void OnDestroy()
+
+        private void OnApplicationPause(bool pauseStatus)
         {
-            _unityTextToSpeech.Call("Stop");
+            if (pauseStatus) _unityTextToSpeech.Call("Stop");
         }
     }
 }
