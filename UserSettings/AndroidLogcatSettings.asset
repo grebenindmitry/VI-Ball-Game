@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "DUM7N19430002800",
+    "m_SelectedDeviceId": "11749d17",
     "m_SelectedPackage": {
-        "deviceId": "DUM7N19430002800",
+        "deviceId": "11749d17",
         "name": "com.DefaultCompany.ARFoundationDemoTesting",
-        "processId": 12256,
+        "processId": 14783,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -36,6 +36,42 @@
             "deviceId": "11749d17",
             "name": "com.DefaultCompany.ARFoundationDemoTesting",
             "processId": 27114,
+            "exited": false
+        },
+        {
+            "deviceId": "11749d17",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 25261,
+            "exited": false
+        },
+        {
+            "deviceId": "11749d17",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 28099,
+            "exited": false
+        },
+        {
+            "deviceId": "11749d17",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 2232,
+            "exited": false
+        },
+        {
+            "deviceId": "11749d17",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 10063,
+            "exited": false
+        },
+        {
+            "deviceId": "11749d17",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 11914,
+            "exited": false
+        },
+        {
+            "deviceId": "11749d17",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 14783,
             "exited": false
         },
         {
