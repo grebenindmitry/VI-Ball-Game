@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextToSpeechScript : MonoBehaviour
 {
@@ -22,9 +24,18 @@ public class TextToSpeechScript : MonoBehaviour
         }));
     }
 
-    public void NativeTts(string message)
+    private void NativeTts(string message)
     {
-        ShowToast("speaking");
         _unityTextToSpeech.Call("Speak", message);
+    }
+
+    public void SpeakText(string text)
+    {
+        NativeTts(text);
+    }
+
+    public void SpeakText(TextMeshProUGUI textBox)
+    {
+        NativeTts(textBox.text);
     }
 }
