@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "11749d17",
         "name": "com.DefaultCompany.ARFoundationDemoTesting",
-        "processId": 11914,
+        "processId": 14783,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -66,6 +66,12 @@
             "deviceId": "11749d17",
             "name": "com.DefaultCompany.ARFoundationDemoTesting",
             "processId": 11914,
+            "exited": false
+        },
+        {
+            "deviceId": "11749d17",
+            "name": "com.DefaultCompany.ARFoundationDemoTesting",
+            "processId": 14783,
             "exited": false
         },
         {
