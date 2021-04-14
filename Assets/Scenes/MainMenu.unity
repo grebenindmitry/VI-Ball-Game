@@ -1953,6 +1953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!1 &1039094586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3198,6 +3199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 02826690dfd65420f9b6f7a3bb3c6a2c, type: 2}
+  slider: {fileID: 1947905821}
 --- !u!1 &1975788428
 GameObject:
   m_ObjectHideFlags: 0
