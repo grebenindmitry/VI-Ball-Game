@@ -8,13 +8,14 @@ public class ButtonPushScript : MonoBehaviour
     public Camera arCamera;
     private float _distance;
     private Touch _touch;
-
-    private TextToSpeechScript _oof;
+    private TextToSpeechScript _tts;
     
     private void Awake()
     {
-       _oof = pushButton.AddComponent<TextToSpeechScript>();
+       _tts = gameObject.AddComponent<TextToSpeechScript>();
     }
+
+
 
     // Update is called once per frame
     private void Update()
@@ -24,7 +25,7 @@ public class ButtonPushScript : MonoBehaviour
         
         // if the distance is less than one meter
         if (_distance <= 1)
-        {
+        {            
             GetTouchPosition();
         }        
     }
@@ -45,7 +46,7 @@ public class ButtonPushScript : MonoBehaviour
             // if it has the class
             if (!(placementObject is null))
             {
-                
+                _tts.SpeakText("Grab the ball, and move torwards box.");
                 //reveals the ball and hides the button
                 ball.SetActive(true);
                 pushButton.SetActive(false);
