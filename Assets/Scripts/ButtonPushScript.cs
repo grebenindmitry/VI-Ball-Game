@@ -42,7 +42,7 @@ public class ButtonPushScript : MonoBehaviour
             // if it has the tag
             if (hitObject.transform.CompareTag("PushButton"))
             {
-                _tts.SpeakText("Grab the ball, and move torwards box.");
+                _tts.SpeakText("Grab the ball.");
                 //reveals the ball and hides the button
                 ball.SetActive(true);
                 pushButton.SetActive(false);
