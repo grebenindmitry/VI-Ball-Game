@@ -10,8 +10,8 @@ public class ParentTransfers : MonoBehaviour
     public GameObject dropButton;
     public GameObject pickButton;
     public GameObject endCanvas;
-    public Transform cam;
-    public Transform box;
+    public Transform arSessionOriginTransform;
+    public Transform boxTransform;
     public Vector3 camPosition;
     private bool ballReleaced;
     private bool ballPicked;
@@ -19,16 +19,15 @@ public class ParentTransfers : MonoBehaviour
     public void Attach()
     {
         // if the distance 
-        if (Vector3.Distance(ball.transform.position, transform.position) <= 1.2)
+        if (Vector3.Distance(ball.transform.position, arSessionOriginTransform.transform.position) <= 1.2)
         {
-            ball.transform.SetParent(cam, true);
-            camPosition = cam.position;
-            camPosition.x -= 0.01f;
-            camPosition.y -= 0.01f;
-            camPosition.z += 0.2f;
-            
+            ball.transform.SetParent(arSessionOriginTransform, true);
+            camPosition = arSessionOriginTransform.position;
+            camPosition.x -= 0.1f;
+            camPosition.y -= 0.1f;
+            camPosition.z += 0.3f;            
 
-            ball.transform.SetPositionAndRotation(camPosition, cam.rotation);
+            ball.transform.SetPositionAndRotation(camPosition, arSessionOriginTransform.rotation);
 
             ballPicked = true;
             pickButton.SetActive(false);
@@ -38,7 +37,7 @@ public class ParentTransfers : MonoBehaviour
     public void Detach()
     {
         ball.transform.SetParent(null);
-        Physics.gravity.Set(box.position.x, (box.position.y + 0.01f), box.position.z);
+        Physics.gravity.Set(boxTransform.position.x, (boxTransform.position.y + 0.01f), boxTransform.position.z);
         ballRigidBody.useGravity = true;
         ballReleaced = true;
     }
@@ -62,7 +61,7 @@ public class ParentTransfers : MonoBehaviour
     {
         if (ball.activeSelf && ballReleaced)
         {
-            float boxBallDistance = Vector3.Distance(box.position, ball.transform.position);
+            float boxBallDistance = Vector3.Distance(boxTransform.position, ball.transform.position);
             if (boxBallDistance <= 0.001 )
             {
                 endCanvas.SetActive(true);
@@ -72,7 +71,7 @@ public class ParentTransfers : MonoBehaviour
 
     private void CalculateBoxCamDist()
     {
-        float boxCamDistance = Vector3.Distance(box.position, cam.position);
+        float boxCamDistance = Vector3.Distance(boxTransform.position, arSessionOriginTransform.position);
         if (boxCamDistance <= 1)
         {
             dropButton.SetActive(true);
@@ -87,7 +86,7 @@ public class ParentTransfers : MonoBehaviour
     {        
         if (ball.activeSelf && !ballPicked)
         {
-            float ballCamDistance = Vector3.Distance(ball.transform.position, cam.position);
+            float ballCamDistance = Vector3.Distance(ball.transform.position, arSessionOriginTransform.position);
             if (ballCamDistance <= 1 )
             {
                 pickButton.SetActive(true);                
