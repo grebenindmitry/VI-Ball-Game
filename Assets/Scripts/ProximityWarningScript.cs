@@ -21,7 +21,7 @@ internal class RayContainer
     public bool IsWarning(float distance)
     {
         //if less than 1m from an obstacle, warning
-        if (distance < 2) return true;
+        if (distance < 1) return true;
 
         //if less than 5 meters and getting closer
         if (distance < 5 && _prevDistance > distance)
@@ -34,7 +34,7 @@ internal class RayContainer
         else _startTime = 0;
 
         //if the timer has reached 5 seconds, warning
-        return Time.time - _startTime > 5;
+        return Time.time - _startTime > 3;
     }
 }
 
