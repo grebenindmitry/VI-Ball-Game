@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+#if PLATFORM_ANDROID
 public class TextToSpeechScript : MonoBehaviour
 {
     private AndroidJavaObject _unityActivity;
@@ -54,3 +55,4 @@ public class TextToSpeechScript : MonoBehaviour
         if (!focusStatus) _unityTextToSpeech.Call("Stop");
     }
 }
+#endif
