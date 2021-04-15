@@ -8,25 +8,30 @@ public class ParentTransfers : MonoBehaviour
     private Rigidbody ballRigidBody;
     public GameObject ball;
     public GameObject dropButton;
+    public GameObject pickButton;
     public GameObject endCanvas;
     public Transform cam;
     public Transform box;
     public Vector3 camPosition;
-    public Quaternion camRotation;
-    bool btnPressed;
+    private bool ballReleaced;
+    private bool ballPicked;
 
     public void Attach()
     {
-        if (Vector3.Distance(ball.transform.position, transform.position) <= 1)
+        // if the distance 
+        if (Vector3.Distance(ball.transform.position, transform.position) <= 1.2)
         {
             ball.transform.SetParent(cam, true);
             camPosition = cam.position;
             camPosition.x -= 0.01f;
             camPosition.y -= 0.01f;
-            camPosition.z += 0.025f;
-            camRotation = cam.rotation;
+            camPosition.z += 0.2f;
+            
 
-            ball.transform.SetPositionAndRotation(cam.position, cam.rotation);
+            ball.transform.SetPositionAndRotation(camPosition, cam.rotation);
+
+            ballPicked = true;
+            pickButton.SetActive(false);
         }
     }
 
@@ -35,38 +40,62 @@ public class ParentTransfers : MonoBehaviour
         ball.transform.SetParent(null);
         Physics.gravity.Set(box.position.x, (box.position.y + 0.01f), box.position.z);
         ballRigidBody.useGravity = true;
-        btnPressed = true;
-
+        ballReleaced = true;
     }
 
     private void Start()
     {
-        btnPressed = false;
+        ballPicked = false;
+        ballReleaced = false;
         ballRigidBody = ball.GetComponent<Rigidbody>();
         ballRigidBody.useGravity = false;
     }
 
     private void Update()
     {
-        float boxCamDistance = Vector3.Distance(box.position, cam.position);
-        if (boxCamDistance <= 1)
-        {
-            dropButton.SetActive(true);
-        } else
-        {
-            dropButton.SetActive(false);
-        }
-
+        CalculateBoxCamDist();
         CalculateBoxBallDist();
+        CalculateBallCamDist();
     }
 
     private void CalculateBoxBallDist()
     {
-
-        float boxBallDistance = Vector3.Distance(box.position, ball.transform.position);
-        if (boxBallDistance <= 0.001 && btnPressed)
+        if (ball.activeSelf && ballReleaced)
         {
-            endCanvas.SetActive(true);
+            float boxBallDistance = Vector3.Distance(box.position, ball.transform.position);
+            if (boxBallDistance <= 0.001 )
+            {
+                endCanvas.SetActive(true);
+            }
+        }
+    }
+
+    private void CalculateBoxCamDist()
+    {
+        float boxCamDistance = Vector3.Distance(box.position, cam.position);
+        if (boxCamDistance <= 1)
+        {
+            dropButton.SetActive(true);
+        }
+        else
+        {
+            dropButton.SetActive(false);
+        }                  
+    }
+
+    private void CalculateBallCamDist()
+    {        
+        if (ball.activeSelf && !ballPicked)
+        {
+            float ballCamDistance = Vector3.Distance(ball.transform.position, cam.position);
+            if (ballCamDistance <= 1 )
+            {
+                pickButton.SetActive(true);                
+            }
+            else
+            {
+                pickButton.SetActive(false);               
+            }
         }
     }
 }
