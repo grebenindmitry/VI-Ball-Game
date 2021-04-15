@@ -39,12 +39,8 @@ public class ButtonPushScript : MonoBehaviour
         // If there is a hit
         if (Physics.Raycast(ray, out var hitObject))
         {
-           
-            // Gets the PlacementObject class if it has one
-            var placementObject = hitObject.transform.GetComponent<DigitalObject>();
-
-            // if it has the class
-            if (!(placementObject is null))
+            // if it has the tag
+            if (hitObject.transform.CompareTag("PushButton"))
             {
                 _tts.SpeakText("Grab the ball, and move torwards box.");
                 //reveals the ball and hides the button
