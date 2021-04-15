@@ -38,14 +38,14 @@ public class ButtonPushScript : MonoBehaviour
         // If there is a hit
         if (Physics.Raycast(ray, out var hitObject))
         {
-            _oof.ShowToast("hit");
+           
             // Gets the PlacementObject class if it has one
             var placementObject = hitObject.transform.GetComponent<PlacementObject>();
 
             // if it has the class
             if (!(placementObject is null))
             {
-                _oof.ShowToast("not is null");
+                
                 //reveals the ball and hides the button
                 ball.SetActive(true);
                 pushButton.SetActive(false);
