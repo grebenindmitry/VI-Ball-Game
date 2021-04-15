@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 262226538}
   - component: {fileID: 262226537}
   m_Layer: 0
-  m_Name: PlaceBallButton
+  m_Name: PlaceBallButtonController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,7 +1097,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1486,7 +1486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051039899449971781, guid: bc98a25052fd553428f796bf63d4da88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 8051039899449971781, guid: bc98a25052fd553428f796bf63d4da88, type: 3}
       propertyPath: m_LocalPosition.z

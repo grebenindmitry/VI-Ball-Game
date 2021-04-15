@@ -8,10 +8,14 @@ public class BallBehaviour : MonoBehaviour
     public Camera arCamera;
     public GameObject box;
     
-    private Vector3 _camPosition;
     private bool _ballPicked;
     private Rigidbody _ballRigidBody;
-    
+    private TextToSpeechScript _tts;
+
+    private void Awake()
+    {
+        _tts = gameObject.AddComponent<TextToSpeechScript>();
+    }
 
     public void Attach()
     {
@@ -24,6 +28,7 @@ public class BallBehaviour : MonoBehaviour
 
             _ballPicked = true;
             pickButton.SetActive(false);
+            _tts.SpeakText("Take the ball to the box.");
         }
     }
 
@@ -34,8 +39,7 @@ public class BallBehaviour : MonoBehaviour
         boxPosition.y += 0.3f;       
         ball.transform.position = boxPosition;
         _ballRigidBody.useGravity = true;
-        dropButton.SetActive(false);
-
+        dropButton.SetActive(false);        
     }
 
     private void Start()
