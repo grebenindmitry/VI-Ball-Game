@@ -5,14 +5,13 @@ public class BallBehaviour : MonoBehaviour
     public GameObject ball;
     public GameObject dropButton;
     public GameObject pickButton;
-    public GameObject endCanvas;
     public Camera arCamera;
     public GameObject box;
     
     private Vector3 _camPosition;
-    private bool _ballReleased;
     private bool _ballPicked;
     private Rigidbody _ballRigidBody;
+    
 
     public void Attach()
     {
@@ -32,15 +31,18 @@ public class BallBehaviour : MonoBehaviour
     {
         ball.transform.SetParent(null);
         var boxPosition = box.transform.position;
-        Physics.gravity.Set(boxPosition.x, boxPosition.y + 0.01f, boxPosition.z);
+        boxPosition.y += 0.3f;       
+        ball.transform.position = boxPosition;
         _ballRigidBody.useGravity = true;
-        _ballReleased = true;
+        dropButton.SetActive(false);
+
     }
 
     private void Start()
     {
+        var collider = box.GetComponent<Collider>();
+        
         _ballPicked = false;
-        _ballReleased = false;
         _ballRigidBody = ball.GetComponent<Rigidbody>();
         _ballRigidBody.useGravity = false;
     }
@@ -48,26 +50,19 @@ public class BallBehaviour : MonoBehaviour
     private void Update()
     {
         CalculateBoxCamDist();
-        CalculateBoxBallDist();
         CalculateBallCamDist();
     }
 
-    private void CalculateBoxBallDist()
-    {
-        if (ball.activeSelf && _ballReleased)
-        {
-            var boxBallDistance = Vector3.Distance(box.transform.position, ball.transform.position);
-            if (boxBallDistance <= 0.01)
-            {
-                BoxtoBallCollitionResolution();
-            }
-        }
-    }
 
     private void CalculateBoxCamDist()
     {
-        var boxCamDistance = Vector3.Distance(box.transform.position, arCamera.transform.position);
-        dropButton.SetActive(boxCamDistance <= 0.6);
+        var boxPos = box.transform.position;
+        boxPos.y = 0;
+
+        var cameraPos = arCamera.transform.position;
+        cameraPos.y = 0;
+        
+        dropButton.SetActive(Vector3.Distance(boxPos, cameraPos) <= 0.6);
     }
 
     private void CalculateBallCamDist()
@@ -77,11 +72,5 @@ public class BallBehaviour : MonoBehaviour
             var ballCamDistance = Vector3.Distance(ball.transform.position, arCamera.transform.position);
             pickButton.SetActive(ballCamDistance <= 1);
         }
-    }
-
-    public void BoxtoBallCollitionResolution()
-    {
-        _ballRigidBody.useGravity = false;
-        endCanvas.SetActive(true);
     }
 }
