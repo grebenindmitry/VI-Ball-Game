@@ -41,7 +41,7 @@ public class ButtonPushScript : MonoBehaviour
         {
            
             // Gets the PlacementObject class if it has one
-            var placementObject = hitObject.transform.GetComponent<PlacementObject>();
+            var placementObject = hitObject.transform.GetComponent<DigitalObject>();
 
             // if it has the class
             if (!(placementObject is null))
