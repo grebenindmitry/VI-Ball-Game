@@ -21,7 +21,7 @@ public class BallBehaviour : MonoBehaviour
         {
             ball.transform.SetParent(arCamera.transform);
 
-            ball.transform.localPosition = new Vector3(-0.1f, -0.05f, 0.3f);
+            ball.transform.localPosition = new Vector3(-0.11f, -0.06f, 0.3f);
 
             _ballPicked = true;
             pickButton.SetActive(false);
