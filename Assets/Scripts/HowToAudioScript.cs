@@ -10,6 +10,7 @@ public class HowToAudioScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Applies the how-to text to Text-To-Speech
         var tts = GetComponent<TextToSpeechScript>();
         tts.SpeakText(message);
     }
