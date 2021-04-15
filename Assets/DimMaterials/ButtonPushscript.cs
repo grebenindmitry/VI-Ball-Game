@@ -8,9 +8,9 @@ public class ButtonPushscript : MonoBehaviour
 {
 
     public GameObject ball;
-    public GameObject button;  
+    public GameObject pushButton;
     private float distance;
-    public Camera arCamera;
+    public Camera arCamera;   
     Touch touch;
 
     Vector2 touchPos = default;
@@ -19,13 +19,13 @@ public class ButtonPushscript : MonoBehaviour
     void Update()
     {
         // Calculate distance
-        distance = Vector3.Distance(button.transform.position, arCamera.transform.position);
+        distance = Vector3.Distance(pushButton.transform.position, arCamera.transform.position);
 
         // if the distance is less than one meter
         if (distance <= 1)
         {
             GetTouchPosition();
-        } 
+        }        
     }
 
     // Shoots a Ray torwards based on the coordinates of the touch in the screen
@@ -47,7 +47,7 @@ public class ButtonPushscript : MonoBehaviour
             {
                 //reveals the ball and hides the button
                 ball.SetActive(true);
-                button.SetActive(false);
+                pushButton.SetActive(false);
             }
         }
     }
@@ -72,4 +72,6 @@ public class ButtonPushscript : MonoBehaviour
             }
         }
     }
+
+  
 }
