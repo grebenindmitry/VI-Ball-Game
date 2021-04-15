@@ -21,7 +21,7 @@ public class BallBehaviour : MonoBehaviour
         {
             ball.transform.SetParent(arCamera.transform);
 
-            ball.transform.localPosition = new Vector3(-0.1f, -0.1f, 0.3f);
+            ball.transform.localPosition = new Vector3(-0.1f, -0.05f, 0.3f);
 
             _ballPicked = true;
             pickButton.SetActive(false);
@@ -57,9 +57,9 @@ public class BallBehaviour : MonoBehaviour
         if (ball.activeSelf && _ballReleased)
         {
             var boxBallDistance = Vector3.Distance(box.transform.position, ball.transform.position);
-            if (boxBallDistance <= 0.001)
+            if (boxBallDistance <= 0.01)
             {
-                endCanvas.SetActive(true);
+                BoxtoBallCollitionResolution();
             }
         }
     }
@@ -67,7 +67,7 @@ public class BallBehaviour : MonoBehaviour
     private void CalculateBoxCamDist()
     {
         var boxCamDistance = Vector3.Distance(box.transform.position, arCamera.transform.position);
-        dropButton.SetActive(boxCamDistance <= 1);
+        dropButton.SetActive(boxCamDistance <= 0.6);
     }
 
     private void CalculateBallCamDist()
@@ -77,5 +77,11 @@ public class BallBehaviour : MonoBehaviour
             var ballCamDistance = Vector3.Distance(ball.transform.position, arCamera.transform.position);
             pickButton.SetActive(ballCamDistance <= 1);
         }
+    }
+
+    public void BoxtoBallCollitionResolution()
+    {
+        _ballRigidBody.useGravity = false;
+        endCanvas.SetActive(true);
     }
 }
