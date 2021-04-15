@@ -758,6 +758,8 @@ GameObject:
   - component: {fileID: 203119120}
   - component: {fileID: 203119119}
   - component: {fileID: 203119118}
+  - component: {fileID: 203119123}
+  - component: {fileID: 203119122}
   m_Layer: 5
   m_Name: HowToCanvas
   m_TagString: Untagged
@@ -822,7 +824,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -847,6 +849,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &203119122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203119117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f7637eae691594ba180a733b287f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 777647706}
+--- !u!114 &203119123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203119117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df95f0079f70ef458c05d70ba862a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259715463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,8 +2275,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 943.0526, y: 0}
-  m_SizeDelta: {x: 1886.1052, y: 2448.91}
+  m_AnchoredPosition: {x: 1045.5491, y: 0}
+  m_SizeDelta: {x: 2091.0981, y: 1128.83}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &777647706
 MonoBehaviour:
@@ -2271,25 +2298,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh urna,
-    tincidunt ac magna non, malesuada volutpat velit. Vestibulum nisi ante, molestie
-    tincidunt justo quis, luctus bibendum urna. In lectus eros, ultrices eget lectus
-    vitae, malesuada rhoncus erat. Ut euismod dictum lectus eget pellentesque. Vivamus
-    et fringilla quam. Fusce tortor mauris, vulputate id congue non, interdum nec
-    turpis. Mauris augue elit, fringilla tincidunt arcu nec, cursus tempus massa.
-    Duis tincidunt nunc eu nulla pulvinar maximus. Quisque eu erat odio.
+  m_text: 'Input your height in the settings before starting if you prefer.
 
+    When
+    you press PLAY and confirm that you read the warning, allow the game up to 10
+    seconds in order to set up the scene.
 
+    You need to make your way to the pillar
+    and press the button to spawn the ball.
 
-    Aliquam
-    placerat convallis nibh, at posuere lacus maximus vitae. Donec fringilla eleifend
-    metus, eget eleifend ligula ornare nec. Donec tristique libero non quam elementum
-    vehicula. Sed id magna at dolor fringilla convallis sit amet eu ex. Duis et eros
-    dolor. Proin vitae tempor mi. Morbi mollis nibh a venenatis placerat. Mauris
-    ut sapien accumsan orci faucibus rhoncus. Etiam cursus tempus tristique. Sed
-    eget ipsum sed augue maximus commodo a in urna. Cras dapibus est odio, vitae
-    faucibus nunc condimentum vitae. Nunc vulputate sodales bibendum. Proin cursus
-    blandit libero quis accumsan.'
+    Pick up the ball and traverse through
+    the playspace while avoiding obstacles.
+
+    Once close enough to the box, drop
+    the ball into the box and finish the game.
+
+    You can restart the game or go
+    back to the main menu.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -2852,7 +2877,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 40, y: 0}
-  m_SizeDelta: {x: -80, y: 2448.91}
+  m_SizeDelta: {x: -80, y: 1128.83}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1261029782
 MonoBehaviour:
@@ -3228,8 +3253,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1498324596}
   m_HandleRect: {fileID: 1498324595}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.32259253
+  m_Value: 1.0000004
+  m_Size: 0.6998398
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3449,7 +3474,7 @@ RectTransform:
   m_Father: {fileID: 1121837455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.6774075}
+  m_AnchorMin: {x: 0, y: 0.30016023}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}

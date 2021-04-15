@@ -38,7 +38,7 @@ internal class RayContainer
     }
 }
 
-public class ARTapToPlaceObject : MonoBehaviour
+public class ProximityWarningScript : MonoBehaviour
 {
     private ARRaycastManager _arRaycastManager;
     private TextToSpeechScript _textToSpeechScript;
@@ -49,7 +49,7 @@ public class ARTapToPlaceObject : MonoBehaviour
     private void Start()
     {
         _arRaycastManager = FindObjectOfType<ARRaycastManager>();
-        _textToSpeechScript = GetComponent<TextToSpeechScript>();
+        _textToSpeechScript = gameObject.AddComponent<TextToSpeechScript>();
         
         _rayContainers.Add(new RayContainer(new Vector3(Screen.width / 10f, Screen.height / 2f), "Left"));
         _rayContainers.Add(new RayContainer(new Vector3(Screen.width / 10f * 9, Screen.height / 2f), "Right"));
