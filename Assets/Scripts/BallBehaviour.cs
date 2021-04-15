@@ -34,6 +34,7 @@ public class BallBehaviour : MonoBehaviour
         boxPosition.y += 0.3f;       
         ball.transform.position = boxPosition;
         _ballRigidBody.useGravity = true;
+        dropButton.SetActive(false);
 
     }
 
