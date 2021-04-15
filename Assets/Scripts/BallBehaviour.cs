@@ -6,8 +6,8 @@ public class BallBehaviour : MonoBehaviour
     public GameObject dropButton;
     public GameObject pickButton;
     public GameObject endCanvas;
-    public Transform arCameraTransform;
-    public Transform boxTransform;
+    public Camera arCamera;
+    public GameObject box;
     
     private Vector3 _camPosition;
     private bool _ballReleased;
@@ -17,15 +17,15 @@ public class BallBehaviour : MonoBehaviour
     public void Attach()
     {
         // if the distance 
-        if (Vector3.Distance(ball.transform.position, arCameraTransform.transform.position) <= 1.2)
+        if (Vector3.Distance(ball.transform.position, arCamera.transform.position) <= 1.2)
         {
-            ball.transform.SetParent(arCameraTransform);
-            _camPosition = arCameraTransform.position;
+            ball.transform.SetParent(arCamera.transform);
+            _camPosition = arCamera.transform.position;
             _camPosition.x -= 0.1f;
             _camPosition.y -= 0.1f;
             _camPosition.z += 0.3f;
 
-            ball.transform.SetPositionAndRotation(_camPosition, arCameraTransform.rotation);
+            ball.transform.SetPositionAndRotation(_camPosition, arCamera.transform.rotation);
 
             _ballPicked = true;
             pickButton.SetActive(false);
@@ -35,8 +35,8 @@ public class BallBehaviour : MonoBehaviour
     public void Detach()
     {
         ball.transform.SetParent(null);
-        var position = boxTransform.position;
-        Physics.gravity.Set(position.x, position.y + 0.01f, position.z);
+        var boxPosition = box.transform.position;
+        Physics.gravity.Set(boxPosition.x, boxPosition.y + 0.01f, boxPosition.z);
         _ballRigidBody.useGravity = true;
         _ballReleased = true;
     }
@@ -60,7 +60,7 @@ public class BallBehaviour : MonoBehaviour
     {
         if (ball.activeSelf && _ballReleased)
         {
-            var boxBallDistance = Vector3.Distance(boxTransform.position, ball.transform.position);
+            var boxBallDistance = Vector3.Distance(box.transform.position, ball.transform.position);
             if (boxBallDistance <= 0.001 )
             {
                 endCanvas.SetActive(true);
@@ -70,7 +70,7 @@ public class BallBehaviour : MonoBehaviour
 
     private void CalculateBoxCamDist()
     {
-        var boxCamDistance = Vector3.Distance(boxTransform.position, arCameraTransform.position);
+        var boxCamDistance = Vector3.Distance(box.transform.position, arCamera.transform.position);
         dropButton.SetActive(boxCamDistance <= 1);
     }
 
@@ -78,7 +78,7 @@ public class BallBehaviour : MonoBehaviour
     {        
         if (ball.activeSelf && !_ballPicked)
         {
-            var ballCamDistance = Vector3.Distance(ball.transform.position, arCameraTransform.position);
+            var ballCamDistance = Vector3.Distance(ball.transform.position, arCamera.transform.position);
             pickButton.SetActive(ballCamDistance <= 1);
         }
     }
