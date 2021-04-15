@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ParentTransfers : MonoBehaviour
+public class BallBehaviour : MonoBehaviour
 {
     private Rigidbody ballRigidBody;
     public GameObject ball;
@@ -12,7 +12,7 @@ public class ParentTransfers : MonoBehaviour
     public GameObject endCanvas;
     public Transform arSessionOriginTransform;
     public Transform boxTransform;
-    public Vector3 camPosition;
+    private Vector3 camPosition;
     private bool ballReleaced;
     private bool ballPicked;
 
