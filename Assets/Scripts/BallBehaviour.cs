@@ -15,6 +15,7 @@ public class BallBehaviour : MonoBehaviour
 
     private void Awake()
     {
+        // initialise the text to speach object
         _tts = gameObject.AddComponent<TextToSpeechScript>();
     }
 
@@ -23,11 +24,13 @@ public class BallBehaviour : MonoBehaviour
         // if the distance 
         if (Vector3.Distance(ball.transform.position, arCamera.transform.position) <= 1.2)
         {
-            // 
+            // Sets camera as parent of ball
             ball.transform.SetParent(arCamera.transform);
 
+            // Place camera bottom left of the screen
             ball.transform.localPosition = new Vector3(-0.11f, -0.06f, 0.3f);
 
+            // deactivate the button and sent audio message to player
             _ballPicked = true;
             pickButton.SetActive(false);
             _tts.SpeakText("Take the ball to the box.");
@@ -76,10 +79,14 @@ public class BallBehaviour : MonoBehaviour
 
         var cameraPos = arCamera.transform.position;
         cameraPos.y = 0;
+
+        //Calculate distance
         var boxCamDistance = Vector3.Distance(boxPos, cameraPos);
 
+        // if the distance is less than 0.6 meters and ball did not drop yet
         if ((boxCamDistance <= 0.6) && !_ballDropped)
         {
+            //activate the drop button
             dropButton.SetActive(true);
         }
         
@@ -87,9 +94,13 @@ public class BallBehaviour : MonoBehaviour
 
     private void CalculateBallCamDist()
     {        
+        // If ball is revealed and not picked yet
         if (ball.activeSelf && !_ballPicked)
         {
+            // Calculate distance
             var ballCamDistance = Vector3.Distance(ball.transform.position, arCamera.transform.position);
+
+            // If the distance is less than 1 meter enable button else disable it
             pickButton.SetActive(ballCamDistance <= 1);
         }
     }
