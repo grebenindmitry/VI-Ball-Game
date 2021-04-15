@@ -32,7 +32,7 @@ public class GameScript : MonoBehaviour
     // Speak the text after 0.1 seconds
     private IEnumerator StartTts(string message)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         _tts.SpeakText(message);
     }
 }
