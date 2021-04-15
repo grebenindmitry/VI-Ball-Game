@@ -76,7 +76,7 @@ namespace GitHub.Unity
             foreach (var file in assemblies)
             {
                 var filepath = path + file;
-                PluginImporter importer = AssetImporter.GetAtPath(filepath) as PluginImporter;
+                var importer = AssetImporter.GetAtPath(filepath) as PluginImporter;
                 if (importer == null)
                 {
                     Debug.LogFormat("GitHub for Unity: Could not find importer for {0}. Some functionality may fail.", filepath);

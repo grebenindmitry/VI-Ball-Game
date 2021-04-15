@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -128,6 +128,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8051039899449971769, guid: bc98a25052fd553428f796bf63d4da88, type: 3}
   m_PrefabInstance: {fileID: 1162236946}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &99179671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99179670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0dfaf4fafe97de4ab1945c09636999c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSelected: 0
+  IsLocked: 0
+  OverlayText: {fileID: 0}
+  canvasComponent: {fileID: 0}
+  OverlayDisplayText: 
 --- !u!1 &178294661
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,8 +852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7596b9544fbb646bad09911ab7933a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPlace: {fileID: 5207337637211158353, guid: e7b27a95b686ead4bb406ffae2d09569, type: 3}
-  placementIndicator: {fileID: 561383016}
 --- !u!4 &520078558
 Transform:
   m_ObjectHideFlags: 0
@@ -999,7 +1014,6 @@ GameObject:
   - component: {fileID: 891161800}
   - component: {fileID: 891161799}
   - component: {fileID: 891161798}
-  - component: {fileID: 891161802}
   m_Layer: 5
   m_Name: GameUICanvas
   m_TagString: Untagged
@@ -1089,25 +1103,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &891161802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891161797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb003920f152aa4ea85341aa849046e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 1203627295}
-  dropButton: {fileID: 297179128}
-  pickButton: {fileID: 0}
-  endCanvas: {fileID: 0}
-  arSessionOriginTransform: {fileID: 0}
-  boxTransform: {fileID: 0}
-  camPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &976800564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,9 +1735,8 @@ MonoBehaviour:
   dropButton: {fileID: 297179128}
   pickButton: {fileID: 1157843626}
   endCanvas: {fileID: 976800564}
-  arSessionOriginTransform: {fileID: 1824127294}
+  arCameraTransform: {fileID: 2054453409}
   boxTransform: {fileID: 1352339568}
-  camPosition: {x: 0, y: 0, z: 0}
 --- !u!54 &1203627297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2420,7 +2414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824127290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2054453409}
