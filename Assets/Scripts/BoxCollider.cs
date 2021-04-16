@@ -5,11 +5,12 @@ public class BoxCollider : MonoBehaviour
 {
 
     public GameObject endCanvas;
-    private TextToSpeechScript _tts;       
+    
+    private TextToSpeechScript _tts;
 
     private void Awake()
     {
-        _tts = gameObject.AddComponent<TextToSpeechScript>();
+        _tts = GetComponent<TextToSpeechScript>();
     }
 
     // Method that resolves collitions
