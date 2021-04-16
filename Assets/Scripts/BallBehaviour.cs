@@ -83,12 +83,13 @@ public class BallBehaviour : MonoBehaviour
         //Calculate distance
         var boxCamDistance = Vector3.Distance(boxPos, cameraPos);
 
-        // if the distance is less than 0.6 meters and ball did not drop yet
-        if ((boxCamDistance <= 0.6) && !_ballDropped)
+        // if the ball did not drop yet
+        if (!_ballDropped)
         {
-            //activate the drop button
-            dropButton.SetActive(true);
+            // if the distance is less than 0.6 meters enebale/diable
+            dropButton.SetActive((boxCamDistance <= 0.6));
         }
+        
         
     }
 
