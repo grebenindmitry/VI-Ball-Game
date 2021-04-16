@@ -20,6 +20,6 @@ public class BoxCollider : MonoBehaviour
         
         //activate canvas and sent audio message to player
         endCanvas.SetActive(true);
-        _tts.SpeakText(endCanvas.GetComponentInChildren<TMP_Text>().text);
+        _tts.SpeakText(endCanvas.GetComponentInChildren<TMP_Text>().text + " Press one of the 2 buttons to either go back to the main menu, or restart the game.");
     }
 }
