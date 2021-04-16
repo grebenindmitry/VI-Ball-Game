@@ -12,7 +12,7 @@ internal class RayContainer
 
     public RayContainer(Vector3 rayOrigin, string name)
     {
-        _startTime = float.MaxValue;
+        _startTime = 0;
         RayOrigin = rayOrigin;
         Name = name;
         _prevDistance = float.MaxValue;
@@ -27,14 +27,14 @@ internal class RayContainer
         if (distance < 5 && _prevDistance > distance)
         {
             //if the timer is not set, set it
-            if (_startTime == float.MaxValue) _startTime = Time.time;
+            if (_startTime == 0) _startTime = Time.time;
             _prevDistance = distance;
         }
         //if father than 5 meters or getting farther, reset the counter
-        else _startTime = float.MaxValue;
+        else _startTime = 0;
 
         //if the timer has reached 5 seconds, warning
-        return Time.time - _startTime > 3;
+        return _startTime != 0 && Time.time - _startTime > 3;
     }
 }
 
