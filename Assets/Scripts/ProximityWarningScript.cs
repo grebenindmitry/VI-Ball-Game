@@ -20,8 +20,8 @@ internal class RayContainer
 
     public bool IsWarning(float distance)
     {
-        //if less than 1m from an obstacle, warning
-        if (distance < 1) return true;
+        //if less than 2m from an obstacle, warning
+        if (distance < 2f) return true;
 
         //if less than 5 meters and getting closer
         if (distance < 5 && _prevDistance > distance)
